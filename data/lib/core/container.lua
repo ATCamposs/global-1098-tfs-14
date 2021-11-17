@@ -2,16 +2,17 @@ function Container.isContainer(self)
 	return true
 end
 
-function Container.createLootItem(self, item)
+function Container.createLootItem(self, item, multiplier)
 	if self:getEmptySlots() == 0 then
 		return true
 	end
 
+	multiplier = multiplier or 1
 	local itemCount = 0
 	local randvalue = getLootRandom()
 	local itemType = ItemType(item.itemId)
 
-	if randvalue < item.chance then
+	if randvalue < item.chance * multiplier then
 		if itemType:isStackable() then
 			itemCount = randvalue % item.maxCount + 1
 		else
@@ -34,7 +35,7 @@ function Container.createLootItem(self, item)
 
 		if tmpItem:isContainer() then
 			for i = 1, #item.childLoot do
-				if not tmpItem:createLootItem(item.childLoot[i]) then
+				if not tmpItem:createLootItem(item.childLoot[i], multiplier) then
 					tmpItem:remove()
 					return false
 				end
