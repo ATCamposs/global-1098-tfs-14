@@ -64,4 +64,11 @@
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua" />
 	<event type="death" name="WhiteDeerDeath" script="others/whitedeer.lua" />
 	<event type="death" name="WhiteDeerScoutsDeath" script="others/whitedeer_scouts.lua" />
+
+	<event type="login" name="UpgradeSystemLogin" script="upgrade_system_cs.lua" />
+	<event type="death" name="UpgradeSystemDeath" script="upgrade_system_cs.lua" />
+	<event type="kill" name="UpgradeSystemKill" script="upgrade_system_cs.lua" />
+	<event type="healthchange" name="UpgradeSystemHealth" script="upgrade_system_cs.lua" />
+	<event type="manachange" name="UpgradeSystemMana" script="upgrade_system_cs.lua" />
+	<event type="preparedeath" name="UpgradeSystemPD" script="upgrade_system_cs.lua" />
 </creaturescripts>

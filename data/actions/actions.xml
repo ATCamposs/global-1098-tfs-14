@@ -512,4 +512,9 @@
 
 	<!-- Market -->
 	<action itemid="14405" function="market" />
+
+	<!-- Upgrade system-->
+	<action fromid="26382" toid="26383" script="upgrade_system_actions.lua" /> <!-- Crystals and Scroll -->
+	<action fromid="26385" toid="26395" script="upgrade_system_actions.lua" /> <!-- Crystals -->
+	<action itemid="26384" script="upgrade_system_tool.lua" /> <!-- Crystal Extractor -->
 </actions>
