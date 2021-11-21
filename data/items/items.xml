@@ -37369,4 +37369,20 @@
 	<item id="26379" article="a" name="golden dragon tapestry" />
 	<item id="26380" article="a" name="sword tapestry" />
 	<item id="26381" article="a" name="brocade tapestry" />
+
+	<!-- Upgrade system-->
+	<item id="26382" name="Crystal Deposit"/>
+	<item id="26383" name="Upgrade Catalyst"/>
+	<item id="26384" name="Crystal Extractor"/>
+	<item id="26385" name="Upgrade Crystal"/>
+	<item id="26386" name="identification stone"/>
+	<item id="26387" name="enchantment crystal"/>
+	<item id="26388" name="alteration crystal"/>
+	<item id="26389" name="cleansing soil"/>
+	<item id="26390" name="fortune crystal"/>
+	<item id="26391" name="faith crystal"/>
+	<item id="26392" name="dind crystal"/>
+	<item id="26393" name="limitless fluid"/>
+	<item id="26394" name="mirrored fluid"/>
+	<item id="26395" name="void fluid"/>
 </items>
