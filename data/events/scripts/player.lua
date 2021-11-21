@@ -9,6 +9,7 @@ function Player:onLook(thing, position, distance)
 	local description = ""
 	if hasEventCallback(EVENT_CALLBACK_ONLOOK) then
 		description = EventCallback(EVENT_CALLBACK_ONLOOK, self, thing, position, distance, description)
+		description = onItemUpgradeLook(self, thing, position, distance, description)
 	end
 	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 end
@@ -41,13 +42,14 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 	if hasEventCallback(EVENT_CALLBACK_ONMOVEITEM) then
 		return EventCallback(EVENT_CALLBACK_ONMOVEITEM, self, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	end
-	return true
+	return us_onMoveItem(self, item, fromPosition, toPosition)
 end
 
 function Player:onItemMoved(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if hasEventCallback(EVENT_CALLBACK_ONITEMMOVED) then
 		EventCallback(EVENT_CALLBACK_ONITEMMOVED, self, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	end
+	onUpgradeMoved(self, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 end
 
 function Player:onMoveCreature(creature, fromPosition, toPosition)
@@ -130,6 +132,7 @@ end
 
 function Player:onGainExperience(source, exp, rawExp)
 	if not source or source:isPlayer() then
+		exp = us_onGainExperience(self, source, exp, rawExp)
 		return exp
 	end
 
