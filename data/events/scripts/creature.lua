@@ -76,6 +76,8 @@ function Creature:onTargetCombat(target)
 			end
 		end
 	end
+	target:registerEvent("UpgradeSystemHealth")
+	target:registerEvent("UpgradeSystemDeath")
 end
 
 function Creature:onHear(speaker, words, type)
